@@ -6,5 +6,5 @@ mingener = Extension('mingener',
 setup(  name='mingener',
         version='0.1',
         description = 'an experimental CPython extension',
-        ext_modules = mingener,
+        ext_modules = [mingener],
 )
