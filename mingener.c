@@ -1,6 +1,9 @@
 #include <Python.h>
 #include <stdio.h>
 
+#include "compatibility23.include.c"
+
+
 static PyObject *
 mingener_print_countdown(PyObject *sef, PyObject *args) {
   unsigned char number;
