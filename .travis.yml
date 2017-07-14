@@ -4,3 +4,4 @@ install:
   - "python setup.py install"
 script:
   - "python -c 'import mingener'"
+  - "python test_countdown.py"
