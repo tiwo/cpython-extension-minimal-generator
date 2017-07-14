@@ -1,3 +1,3 @@
 import mingener
 
-print(mingener.print_countdown(123))
+print(mingener.print_countdown(9))
