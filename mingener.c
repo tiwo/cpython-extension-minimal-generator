@@ -23,7 +23,7 @@ mingener_print_countdown(PyObject *sef, PyObject *args) {
 static PyMethodDef mingenerMethods[]= {
   {"print_countdown", mingener_print_countdown, METH_VARARGS, "count down on stdout"},
   {NULL, NULL, 0, NULL}
-}
+};
 
 MOD_INIT(mingener) {
   PyObject *module;
