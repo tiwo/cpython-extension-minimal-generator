@@ -4,3 +4,5 @@ import mingener
 
 for k in mingener.CounterDowner(20):
     print(k, end=' ')
+
+mingener.CounterDowner(1234)
