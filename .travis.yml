@@ -9,3 +9,4 @@ script:
   - "python -c 'import mingener'"
   - "python -c 'import mingener; from see import see; print(repr(see(mingener)))'"
   - "python test_countdown.py"
+  - "python test_counterdowner.py"
