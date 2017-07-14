@@ -13,7 +13,7 @@ mingener_print_countdown(PyObject *sef, PyObject *args) {
     fprintf(stdout, "%u to go...\n", number);
   }
 
-  fprintf("done.\n");
+  fprintf(stdout, "done.\n");
 
   /* return Py_BuildValue("i", 1); */
   return Py_True;
