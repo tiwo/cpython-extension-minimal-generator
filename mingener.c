@@ -30,9 +30,9 @@ static PyMethodDef mingenerMethods[]= {
 
 MOD_INIT(mingener) {
   PyObject *module;
-  MOD_DEF(module, "mingener", "close-to minimal extension module", mingnerMethods)
+  MOD_DEF(module, "mingener", "close-to minimal extension module", mingenerMethods)
 
-  if (!m) return MOD_ERROR_VAL;
+  if (!module) return MOD_ERROR_VAL;
 
   return MOD_SUCCESS_VAL(module);
 }
