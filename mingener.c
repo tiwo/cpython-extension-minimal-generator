@@ -30,7 +30,7 @@ typedef struct {
 
 
 static PyObject *
-mingener_CounterDowner_new(PyObject *type, PyObject *args, PyObject *kwargs) {
+mingener_CounterDowner_new(PyTypeObject *type, PyObject *args, PyObject *kwargs) {
   unsigned int *number;
 
   if (!PyArg_ParseTuple(args, "b", &number)) return NULL;
