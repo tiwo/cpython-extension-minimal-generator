@@ -121,7 +121,7 @@ MOD_INIT(mingener) {
   if (PyType_Ready(&mingener_CounterDowner) < 0) return MOD_ERROR_VAL;
 
   Py_INCREF((PyObject *)&mingener_CounterDowner);
-  PyModule_AddObject(module, "CounterDowner", (PyObject *)mingener_CounterDowner);
+  PyModule_AddObject(module, "CounterDowner", (PyObject *)&mingener_CounterDowner);
 
   return MOD_SUCCESS_VAL(module);
 }
