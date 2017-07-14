@@ -41,13 +41,13 @@ mingener_CounterDowner_new(PyObject *type, PyObject *args, PyObject *kwargs) {
 
   if (!state) return NULL;
 
-  *state->number = number;
+  state->number = *number;
   return (PyObject *) state;
 }
 
 
 static void mingener_CounterDowner_dealloc(mingener_CounterDownerInstance *state) {
-  Py_TYPE(state)->tp_free(state):
+  Py_TYPE(state)->tp_free(state);
 }
 
 static PyObject *mingener_CounterDowner_next(mingener_CounterDownerInstance *state) {
@@ -102,7 +102,7 @@ PyTypeObject mingener_CounterDowner = {
   0,                              /* tp_init */
   PyType_GenericAlloc,            /* tp_alloc */
   mingener_CounterDowner_new,     /* tp_new */
-}
+};
 
 
 
