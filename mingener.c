@@ -41,7 +41,7 @@ mingener_CounterDowner_new(PyObject *type, PyObject *args, PyObject *kwargs) {
 
   if (!state) return NULL;
 
-  state->number = number
+  *state->number = number;
   return (PyObject *) state;
 }
 
