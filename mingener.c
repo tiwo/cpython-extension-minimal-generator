@@ -28,6 +28,41 @@ typedef struct {
     unsigned char number;
 } mingener_CounterDownerInstance;
 
+
+static PyObject *
+mingener_CounterDowner_new(PyObject *type, PyObject *args, PyObject *kwargs) {
+  unsigned int *number;
+
+  if (!PyArg_ParseTuple(args, "b", &number)) return NULL;
+
+
+  mingener_CounterDownerInstance *state
+    = (mingener_CounterDownerInstance *)type -> tp_alloc(type, 0);
+
+  if (!state) return NULL;
+
+  state->number = number
+  return (PyObject *) state;
+}
+
+
+static void mingener_CounterDowner_dealloc(mingener_CounterDownerInstance *state) {
+  Py_TYPE(state)->tp_free(state):
+}
+
+static PyObject *mingener_CounterDowner_next(mingener_CounterDownerInstance *state) {
+
+  if (!state->number) return NULL;
+
+  PyObject *n = Py_BuildValue("B", state->number);
+  if (!n) return NULL;
+
+  state->number --;
+
+  return n;
+}
+
+
 PyTypeObject mingener_CounterDowner = {
   PyVarObject_HEAD_INIT(&PyType_Type, 0)
   "CounterDowner",                /* tp_name */
@@ -70,38 +105,6 @@ PyTypeObject mingener_CounterDowner = {
 }
 
 
-static PyObject *
-mingener_CounterDowner_new(PyObject *type, PyObject *args, PyObject *kwargs) {
-  unsigned int *number;
-
-  if (!PyArg_ParseTuple(args, "b", &number)) return NULL;
-
-
-  mingener_CounterDownerInstance *state
-    = (mingener_CounterDownerInstance *)type -> tp_alloc(type, 0);
-
-  if (!state) return NULL;
-
-  state->number = number
-  return (PyObject *) state;
-}
-
-
-static void mingener_CounterDowner_dealloc(mingener_CounterDownerInstance *state) {
-  Py_TYPE(state)->tp_free(state):
-}
-
-static PyObject *mingener_CounterDowner_next(mingener_CounterDownerInstance *state) {
-
-  if (!state->number) return NULL;
-
-  PyObject *n = Py_BuildValue("B", state->number);
-  if (!n) return NULL;
-
-  state->number --;
-
-  return n;
-}
 
 
 static PyMethodDef mingenerMethods[]= {
